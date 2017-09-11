@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>
+            Student Lists
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button icon-only color="royal" (click)="RefreshList()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+        </ion-buttons>
+
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)="Insert()">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item-sliding *ngFor="let person of student" (click)="itemSelected(person)" detail-push>
+            <ion-item>
+                <h2>{{person.firstname}} {{person.lastname}}</h2>
+                <h3>{{person.email}}</h3>
+            </ion-item>
+
+            <ion-item-options side="right">
+                <button ion-button color="primary" (click)="deleteStudent(person.id)">
+        <ion-icon name="trash"></ion-icon>
+        Delete
+      </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+</ion-content>

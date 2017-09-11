@@ -1,0 +1,8 @@
+{
+  "name": "myForm",
+  "app_id": "3899afed",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
